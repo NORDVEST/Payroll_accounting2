@@ -133,7 +133,7 @@
             // 
             // buttonMainMenu
             // 
-            this.buttonMainMenu.Location = new System.Drawing.Point(12, 503);
+            this.buttonMainMenu.Location = new System.Drawing.Point(16, 503);
             this.buttonMainMenu.Name = "buttonMainMenu";
             this.buttonMainMenu.Size = new System.Drawing.Size(86, 31);
             this.buttonMainMenu.TabIndex = 0;
