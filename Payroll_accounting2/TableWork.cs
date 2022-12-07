@@ -50,5 +50,12 @@ namespace Payroll_accounting2
             this.departmentsTableAdapter.Fill(this.payroll_accounting2DataSet.Departments);
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TableWork tableWork = new TableWork();
+            tableWork.Show();
+        }
     }
 }
