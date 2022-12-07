@@ -59,11 +59,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDeductionsAllowancesWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportDeductionsAllowancesWorker.Designer.cs">
+      <DependentUpon>ReportDeductionsAllowancesWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportMenu.Designer.cs">
       <DependentUpon>ReportMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSalaryPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportSalaryPeriod.Designer.cs">
+      <DependentUpon>ReportSalaryPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSalaryDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportSalaryDepartment.Designer.cs">
+      <DependentUpon>ReportSalaryDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSalaryWorkerPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportSalaryWorkerPeriod.Designer.cs">
+      <DependentUpon>ReportSalaryWorkerPeriod.cs</DependentUpon>
     </Compile>
     <Compile Include="TableWork.cs">
       <SubType>Form</SubType>
@@ -84,8 +108,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportDeductionsAllowancesWorker.resx">
+      <DependentUpon>ReportDeductionsAllowancesWorker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportMenu.resx">
       <DependentUpon>ReportMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSalaryDepartment.resx">
+      <DependentUpon>ReportSalaryDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSalaryPeriod.resx">
+      <DependentUpon>ReportSalaryPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSalaryWorkerPeriod.resx">
+      <DependentUpon>ReportSalaryWorkerPeriod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableWork.resx">
       <DependentUpon>TableWork.cs</DependentUpon>
