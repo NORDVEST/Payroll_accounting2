@@ -34,9 +34,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(276, 151);
+            this.button1.Location = new System.Drawing.Point(267, 152);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 33);
+            this.button1.Size = new System.Drawing.Size(132, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Таблицы";
             this.button1.UseVisualStyleBackColor = true;
@@ -44,9 +44,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(276, 208);
+            this.button2.Location = new System.Drawing.Point(267, 209);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 31);
+            this.button2.Size = new System.Drawing.Size(132, 35);
             this.button2.TabIndex = 1;
             this.button2.Text = "Отчеты";
             this.button2.UseVisualStyleBackColor = true;
