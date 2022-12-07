@@ -19,9 +19,16 @@ namespace Payroll_accounting2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             TableWork tableWork = new TableWork();
             tableWork.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportMenu reportMenu = new ReportMenu();
+            reportMenu.Show();
         }
     }
 }
