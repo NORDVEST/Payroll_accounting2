@@ -23,5 +23,12 @@ namespace Payroll_accounting2
             ReportMenu reportMenu = new ReportMenu();
             reportMenu.Show(this);
         }
+
+        private void ReportSalaryDepartment_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
