@@ -383,37 +383,57 @@ SELECT Id_wdays, Id_worker, Date_Start, Date_End FROM working_days WHERE (Id_wda
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Payroll_accounting2ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Workers.Worker, Tariff_schedule.Salary
+FROM     Workers INNER JOIN
+                  Positions ON Workers.Id_position = Positions.Id_position INNER JOIN
+                  Tariff_schedule ON Positions.Id_position = Tariff_schedule.Id_position</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Worker" DataSetColumn="Worker" />
+              <Mapping SourceColumn="Salary" DataSetColumn="Salary" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Payroll_accounting2DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Payroll_accounting2DataSet" msprop:Generator_DataSetName="Payroll_accounting2DataSet">
+  <xs:element name="Payroll_accounting2DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Payroll_accounting2DataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Payroll_accounting2DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Allowances" msprop:Generator_RowEvHandlerName="AllowancesRowChangeEventHandler" msprop:Generator_RowDeletedName="AllowancesRowDeleted" msprop:Generator_RowDeletingName="AllowancesRowDeleting" msprop:Generator_RowEvArgName="AllowancesRowChangeEvent" msprop:Generator_TablePropName="Allowances" msprop:Generator_RowChangedName="AllowancesRowChanged" msprop:Generator_RowChangingName="AllowancesRowChanging" msprop:Generator_TableClassName="AllowancesDataTable" msprop:Generator_RowClassName="AllowancesRow" msprop:Generator_TableVarName="tableAllowances" msprop:Generator_UserTableName="Allowances">
+        <xs:element name="Allowances" msprop:Generator_RowClassName="AllowancesRow" msprop:Generator_RowEvHandlerName="AllowancesRowChangeEventHandler" msprop:Generator_RowDeletedName="AllowancesRowDeleted" msprop:Generator_RowDeletingName="AllowancesRowDeleting" msprop:Generator_RowEvArgName="AllowancesRowChangeEvent" msprop:Generator_TablePropName="Allowances" msprop:Generator_RowChangedName="AllowancesRowChanged" msprop:Generator_UserTableName="Allowances" msprop:Generator_RowChangingName="AllowancesRowChanging" msprop:Generator_TableClassName="AllowancesDataTable" msprop:Generator_TableVarName="tableAllowances">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_allowances" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id_allowances" msprop:Generator_ColumnPropNameInTable="Id_allowancesColumn" msprop:Generator_ColumnVarNameInTable="columnId_allowances" msprop:Generator_UserColumnName="Id_allowances" type="xs:int" />
-              <xs:element name="Date_allowances" msprop:Generator_ColumnPropNameInRow="Date_allowances" msprop:Generator_ColumnPropNameInTable="Date_allowancesColumn" msprop:Generator_ColumnVarNameInTable="columnDate_allowances" msprop:Generator_UserColumnName="Date_allowances" type="xs:dateTime" />
-              <xs:element name="Allowance" msprop:Generator_ColumnPropNameInRow="Allowance" msprop:Generator_ColumnPropNameInTable="AllowanceColumn" msprop:Generator_ColumnVarNameInTable="columnAllowance" msprop:Generator_UserColumnName="Allowance" type="xs:double" minOccurs="0" />
+              <xs:element name="Id_allowances" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_allowances" msprop:Generator_ColumnPropNameInTable="Id_allowancesColumn" msprop:Generator_ColumnPropNameInRow="Id_allowances" msprop:Generator_ColumnVarNameInTable="columnId_allowances" type="xs:int" />
+              <xs:element name="Date_allowances" msprop:Generator_UserColumnName="Date_allowances" msprop:Generator_ColumnPropNameInTable="Date_allowancesColumn" msprop:Generator_ColumnPropNameInRow="Date_allowances" msprop:Generator_ColumnVarNameInTable="columnDate_allowances" type="xs:dateTime" />
+              <xs:element name="Allowance" msprop:Generator_UserColumnName="Allowance" msprop:Generator_ColumnPropNameInTable="AllowanceColumn" msprop:Generator_ColumnPropNameInRow="Allowance" msprop:Generator_ColumnVarNameInTable="columnAllowance" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Deductions" msprop:Generator_RowEvHandlerName="DeductionsRowChangeEventHandler" msprop:Generator_RowDeletedName="DeductionsRowDeleted" msprop:Generator_RowDeletingName="DeductionsRowDeleting" msprop:Generator_RowEvArgName="DeductionsRowChangeEvent" msprop:Generator_TablePropName="Deductions" msprop:Generator_RowChangedName="DeductionsRowChanged" msprop:Generator_RowChangingName="DeductionsRowChanging" msprop:Generator_TableClassName="DeductionsDataTable" msprop:Generator_RowClassName="DeductionsRow" msprop:Generator_TableVarName="tableDeductions" msprop:Generator_UserTableName="Deductions">
+        <xs:element name="Deductions" msprop:Generator_RowClassName="DeductionsRow" msprop:Generator_RowEvHandlerName="DeductionsRowChangeEventHandler" msprop:Generator_RowDeletedName="DeductionsRowDeleted" msprop:Generator_RowDeletingName="DeductionsRowDeleting" msprop:Generator_RowEvArgName="DeductionsRowChangeEvent" msprop:Generator_TablePropName="Deductions" msprop:Generator_RowChangedName="DeductionsRowChanged" msprop:Generator_UserTableName="Deductions" msprop:Generator_RowChangingName="DeductionsRowChanging" msprop:Generator_TableClassName="DeductionsDataTable" msprop:Generator_TableVarName="tableDeductions">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_deductions" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id_deductions" msprop:Generator_ColumnPropNameInTable="Id_deductionsColumn" msprop:Generator_ColumnVarNameInTable="columnId_deductions" msprop:Generator_UserColumnName="Id_deductions" type="xs:int" />
-              <xs:element name="Date_deduction" msprop:Generator_ColumnPropNameInRow="Date_deduction" msprop:Generator_ColumnPropNameInTable="Date_deductionColumn" msprop:Generator_ColumnVarNameInTable="columnDate_deduction" msprop:Generator_UserColumnName="Date_deduction" type="xs:dateTime" />
-              <xs:element name="Deduction" msprop:Generator_ColumnPropNameInRow="Deduction" msprop:Generator_ColumnPropNameInTable="DeductionColumn" msprop:Generator_ColumnVarNameInTable="columnDeduction" msprop:Generator_UserColumnName="Deduction" type="xs:double" minOccurs="0" />
+              <xs:element name="Id_deductions" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_deductions" msprop:Generator_ColumnPropNameInTable="Id_deductionsColumn" msprop:Generator_ColumnPropNameInRow="Id_deductions" msprop:Generator_ColumnVarNameInTable="columnId_deductions" type="xs:int" />
+              <xs:element name="Date_deduction" msprop:Generator_UserColumnName="Date_deduction" msprop:Generator_ColumnPropNameInTable="Date_deductionColumn" msprop:Generator_ColumnPropNameInRow="Date_deduction" msprop:Generator_ColumnVarNameInTable="columnDate_deduction" type="xs:dateTime" />
+              <xs:element name="Deduction" msprop:Generator_UserColumnName="Deduction" msprop:Generator_ColumnPropNameInTable="DeductionColumn" msprop:Generator_ColumnPropNameInRow="Deduction" msprop:Generator_ColumnVarNameInTable="columnDeduction" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Departments" msprop:Generator_RowEvHandlerName="DepartmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentsRowDeleted" msprop:Generator_RowDeletingName="DepartmentsRowDeleting" msprop:Generator_RowEvArgName="DepartmentsRowChangeEvent" msprop:Generator_TablePropName="Departments" msprop:Generator_RowChangedName="DepartmentsRowChanged" msprop:Generator_RowChangingName="DepartmentsRowChanging" msprop:Generator_TableClassName="DepartmentsDataTable" msprop:Generator_RowClassName="DepartmentsRow" msprop:Generator_TableVarName="tableDepartments" msprop:Generator_UserTableName="Departments">
+        <xs:element name="Departments" msprop:Generator_RowClassName="DepartmentsRow" msprop:Generator_RowEvHandlerName="DepartmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentsRowDeleted" msprop:Generator_RowDeletingName="DepartmentsRowDeleting" msprop:Generator_RowEvArgName="DepartmentsRowChangeEvent" msprop:Generator_TablePropName="Departments" msprop:Generator_RowChangedName="DepartmentsRowChanged" msprop:Generator_UserTableName="Departments" msprop:Generator_RowChangingName="DepartmentsRowChanging" msprop:Generator_TableClassName="DepartmentsDataTable" msprop:Generator_TableVarName="tableDepartments">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_department" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id_department" msprop:Generator_ColumnPropNameInTable="Id_departmentColumn" msprop:Generator_ColumnVarNameInTable="columnId_department" msprop:Generator_UserColumnName="Id_department" type="xs:int" />
-              <xs:element name="Department" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_UserColumnName="Department">
+              <xs:element name="Id_department" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_department" msprop:Generator_ColumnPropNameInTable="Id_departmentColumn" msprop:Generator_ColumnPropNameInRow="Id_department" msprop:Generator_ColumnVarNameInTable="columnId_department" type="xs:int" />
+              <xs:element name="Department" msprop:Generator_UserColumnName="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -423,11 +443,11 @@ SELECT Id_wdays, Id_worker, Date_Start, Date_End FROM working_days WHERE (Id_wda
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Positions" msprop:Generator_RowEvHandlerName="PositionsRowChangeEventHandler" msprop:Generator_RowDeletedName="PositionsRowDeleted" msprop:Generator_RowDeletingName="PositionsRowDeleting" msprop:Generator_RowEvArgName="PositionsRowChangeEvent" msprop:Generator_TablePropName="Positions" msprop:Generator_RowChangedName="PositionsRowChanged" msprop:Generator_RowChangingName="PositionsRowChanging" msprop:Generator_TableClassName="PositionsDataTable" msprop:Generator_RowClassName="PositionsRow" msprop:Generator_TableVarName="tablePositions" msprop:Generator_UserTableName="Positions">
+        <xs:element name="Positions" msprop:Generator_RowClassName="PositionsRow" msprop:Generator_RowEvHandlerName="PositionsRowChangeEventHandler" msprop:Generator_RowDeletedName="PositionsRowDeleted" msprop:Generator_RowDeletingName="PositionsRowDeleting" msprop:Generator_RowEvArgName="PositionsRowChangeEvent" msprop:Generator_TablePropName="Positions" msprop:Generator_RowChangedName="PositionsRowChanged" msprop:Generator_UserTableName="Positions" msprop:Generator_RowChangingName="PositionsRowChanging" msprop:Generator_TableClassName="PositionsDataTable" msprop:Generator_TableVarName="tablePositions">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_position" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id_position" msprop:Generator_ColumnPropNameInTable="Id_positionColumn" msprop:Generator_ColumnVarNameInTable="columnId_position" msprop:Generator_UserColumnName="Id_position" type="xs:int" />
-              <xs:element name="Position" msprop:Generator_ColumnPropNameInRow="Position" msprop:Generator_ColumnPropNameInTable="PositionColumn" msprop:Generator_ColumnVarNameInTable="columnPosition" msprop:Generator_UserColumnName="Position">
+              <xs:element name="Id_position" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_position" msprop:Generator_ColumnPropNameInTable="Id_positionColumn" msprop:Generator_ColumnPropNameInRow="Id_position" msprop:Generator_ColumnVarNameInTable="columnId_position" type="xs:int" />
+              <xs:element name="Position" msprop:Generator_UserColumnName="Position" msprop:Generator_ColumnPropNameInTable="PositionColumn" msprop:Generator_ColumnPropNameInRow="Position" msprop:Generator_ColumnVarNameInTable="columnPosition">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -437,19 +457,44 @@ SELECT Id_wdays, Id_worker, Date_Start, Date_End FROM working_days WHERE (Id_wda
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Tariff_schedule" msprop:Generator_RowEvHandlerName="Tariff_scheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="Tariff_scheduleRowDeleted" msprop:Generator_RowDeletingName="Tariff_scheduleRowDeleting" msprop:Generator_RowEvArgName="Tariff_scheduleRowChangeEvent" msprop:Generator_TablePropName="Tariff_schedule" msprop:Generator_RowChangedName="Tariff_scheduleRowChanged" msprop:Generator_RowChangingName="Tariff_scheduleRowChanging" msprop:Generator_TableClassName="Tariff_scheduleDataTable" msprop:Generator_RowClassName="Tariff_scheduleRow" msprop:Generator_TableVarName="tableTariff_schedule" msprop:Generator_UserTableName="Tariff_schedule">
+        <xs:element name="Tariff_schedule" msprop:Generator_RowClassName="Tariff_scheduleRow" msprop:Generator_RowEvHandlerName="Tariff_scheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="Tariff_scheduleRowDeleted" msprop:Generator_RowDeletingName="Tariff_scheduleRowDeleting" msprop:Generator_RowEvArgName="Tariff_scheduleRowChangeEvent" msprop:Generator_TablePropName="Tariff_schedule" msprop:Generator_RowChangedName="Tariff_scheduleRowChanged" msprop:Generator_UserTableName="Tariff_schedule" msprop:Generator_RowChangingName="Tariff_scheduleRowChanging" msprop:Generator_TableClassName="Tariff_scheduleDataTable" msprop:Generator_TableVarName="tableTariff_schedule">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_salary_one_day" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id_salary_one_day" msprop:Generator_ColumnPropNameInTable="Id_salary_one_dayColumn" msprop:Generator_ColumnVarNameInTable="columnId_salary_one_day" msprop:Generator_UserColumnName="Id_salary_one_day" type="xs:int" />
-              <xs:element name="Id_position" msprop:Generator_ColumnPropNameInRow="Id_position" msprop:Generator_ColumnPropNameInTable="Id_positionColumn" msprop:Generator_ColumnVarNameInTable="columnId_position" msprop:Generator_UserColumnName="Id_position" type="xs:int" minOccurs="0" />
-              <xs:element name="Salary" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnVarNameInTable="columnSalary" msprop:Generator_UserColumnName="Salary" type="xs:double" />
+              <xs:element name="Id_salary_one_day" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_salary_one_day" msprop:Generator_ColumnPropNameInTable="Id_salary_one_dayColumn" msprop:Generator_ColumnPropNameInRow="Id_salary_one_day" msprop:Generator_ColumnVarNameInTable="columnId_salary_one_day" type="xs:int" />
+              <xs:element name="Id_position" msprop:Generator_UserColumnName="Id_position" msprop:Generator_ColumnPropNameInTable="Id_positionColumn" msprop:Generator_ColumnPropNameInRow="Id_position" msprop:Generator_ColumnVarNameInTable="columnId_position" type="xs:int" minOccurs="0" />
+              <xs:element name="Salary" msprop:Generator_UserColumnName="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnVarNameInTable="columnSalary" type="xs:double" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Workers" msprop:Generator_RowEvHandlerName="WorkersRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkersRowDeleted" msprop:Generator_RowDeletingName="WorkersRowDeleting" msprop:Generator_RowEvArgName="WorkersRowChangeEvent" msprop:Generator_TablePropName="Workers" msprop:Generator_RowChangedName="WorkersRowChanged" msprop:Generator_RowChangingName="WorkersRowChanging" msprop:Generator_TableClassName="WorkersDataTable" msprop:Generator_RowClassName="WorkersRow" msprop:Generator_TableVarName="tableWorkers" msprop:Generator_UserTableName="Workers">
+        <xs:element name="Workers" msprop:Generator_RowClassName="WorkersRow" msprop:Generator_RowEvHandlerName="WorkersRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkersRowDeleted" msprop:Generator_RowDeletingName="WorkersRowDeleting" msprop:Generator_RowEvArgName="WorkersRowChangeEvent" msprop:Generator_TablePropName="Workers" msprop:Generator_RowChangedName="WorkersRowChanged" msprop:Generator_UserTableName="Workers" msprop:Generator_RowChangingName="WorkersRowChanging" msprop:Generator_TableClassName="WorkersDataTable" msprop:Generator_TableVarName="tableWorkers">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_worker" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id_worker" msprop:Generator_ColumnPropNameInTable="Id_workerColumn" msprop:Generator_ColumnVarNameInTable="columnId_worker" msprop:Generator_UserColumnName="Id_worker" type="xs:int" />
+              <xs:element name="Id_worker" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_worker" msprop:Generator_ColumnPropNameInTable="Id_workerColumn" msprop:Generator_ColumnPropNameInRow="Id_worker" msprop:Generator_ColumnVarNameInTable="columnId_worker" type="xs:int" />
+              <xs:element name="Worker" msprop:Generator_UserColumnName="Worker" msprop:Generator_ColumnPropNameInTable="WorkerColumn" msprop:Generator_ColumnPropNameInRow="Worker" msprop:Generator_ColumnVarNameInTable="columnWorker">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_position" msprop:Generator_UserColumnName="Id_position" msprop:Generator_ColumnPropNameInTable="Id_positionColumn" msprop:Generator_ColumnPropNameInRow="Id_position" msprop:Generator_ColumnVarNameInTable="columnId_position" type="xs:int" minOccurs="0" />
+              <xs:element name="Id_department" msprop:Generator_UserColumnName="Id_department" msprop:Generator_ColumnPropNameInTable="Id_departmentColumn" msprop:Generator_ColumnPropNameInRow="Id_department" msprop:Generator_ColumnVarNameInTable="columnId_department" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="working_days" msprop:Generator_RowClassName="working_daysRow" msprop:Generator_RowEvHandlerName="working_daysRowChangeEventHandler" msprop:Generator_RowDeletedName="working_daysRowDeleted" msprop:Generator_RowDeletingName="working_daysRowDeleting" msprop:Generator_RowEvArgName="working_daysRowChangeEvent" msprop:Generator_TablePropName="working_days" msprop:Generator_RowChangedName="working_daysRowChanged" msprop:Generator_UserTableName="working_days" msprop:Generator_RowChangingName="working_daysRowChanging" msprop:Generator_TableClassName="working_daysDataTable" msprop:Generator_TableVarName="tableworking_days">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_wdays" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_wdays" msprop:Generator_ColumnPropNameInTable="Id_wdaysColumn" msprop:Generator_ColumnPropNameInRow="Id_wdays" msprop:Generator_ColumnVarNameInTable="columnId_wdays" type="xs:int" />
+              <xs:element name="Id_worker" msprop:Generator_UserColumnName="Id_worker" msprop:Generator_ColumnPropNameInTable="Id_workerColumn" msprop:Generator_ColumnPropNameInRow="Id_worker" msprop:Generator_ColumnVarNameInTable="columnId_worker" type="xs:int" minOccurs="0" />
+              <xs:element name="Date_Start" msprop:Generator_UserColumnName="Date_Start" msprop:Generator_ColumnPropNameInTable="Date_StartColumn" msprop:Generator_ColumnPropNameInRow="Date_Start" msprop:Generator_ColumnVarNameInTable="columnDate_Start" type="xs:dateTime" />
+              <xs:element name="Date_End" msprop:Generator_UserColumnName="Date_End" msprop:Generator_ColumnPropNameInTable="Date_EndColumn" msprop:Generator_ColumnPropNameInRow="Date_End" msprop:Generator_ColumnVarNameInTable="columnDate_End" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
               <xs:element name="Worker" msprop:Generator_ColumnPropNameInRow="Worker" msprop:Generator_ColumnPropNameInTable="WorkerColumn" msprop:Generator_ColumnVarNameInTable="columnWorker" msprop:Generator_UserColumnName="Worker">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -457,18 +502,7 @@ SELECT Id_wdays, Id_worker, Date_Start, Date_End FROM working_days WHERE (Id_wda
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Id_position" msprop:Generator_ColumnPropNameInRow="Id_position" msprop:Generator_ColumnPropNameInTable="Id_positionColumn" msprop:Generator_ColumnVarNameInTable="columnId_position" msprop:Generator_UserColumnName="Id_position" type="xs:int" minOccurs="0" />
-              <xs:element name="Id_department" msprop:Generator_ColumnPropNameInRow="Id_department" msprop:Generator_ColumnPropNameInTable="Id_departmentColumn" msprop:Generator_ColumnVarNameInTable="columnId_department" msprop:Generator_UserColumnName="Id_department" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="working_days" msprop:Generator_RowEvHandlerName="working_daysRowChangeEventHandler" msprop:Generator_RowDeletedName="working_daysRowDeleted" msprop:Generator_RowDeletingName="working_daysRowDeleting" msprop:Generator_RowEvArgName="working_daysRowChangeEvent" msprop:Generator_TablePropName="working_days" msprop:Generator_RowChangedName="working_daysRowChanged" msprop:Generator_RowChangingName="working_daysRowChanging" msprop:Generator_TableClassName="working_daysDataTable" msprop:Generator_RowClassName="working_daysRow" msprop:Generator_TableVarName="tableworking_days" msprop:Generator_UserTableName="working_days">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Id_wdays" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id_wdays" msprop:Generator_ColumnPropNameInTable="Id_wdaysColumn" msprop:Generator_ColumnVarNameInTable="columnId_wdays" msprop:Generator_UserColumnName="Id_wdays" type="xs:int" />
-              <xs:element name="Id_worker" msprop:Generator_ColumnPropNameInRow="Id_worker" msprop:Generator_ColumnPropNameInTable="Id_workerColumn" msprop:Generator_ColumnVarNameInTable="columnId_worker" msprop:Generator_UserColumnName="Id_worker" type="xs:int" minOccurs="0" />
-              <xs:element name="Date_Start" msprop:Generator_ColumnPropNameInRow="Date_Start" msprop:Generator_ColumnPropNameInTable="Date_StartColumn" msprop:Generator_ColumnVarNameInTable="columnDate_Start" msprop:Generator_UserColumnName="Date_Start" type="xs:dateTime" />
-              <xs:element name="Date_End" msprop:Generator_ColumnPropNameInRow="Date_End" msprop:Generator_ColumnPropNameInTable="Date_EndColumn" msprop:Generator_ColumnVarNameInTable="columnDate_End" msprop:Generator_UserColumnName="Date_End" type="xs:dateTime" />
+              <xs:element name="Salary" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnVarNameInTable="columnSalary" msprop:Generator_UserColumnName="Salary" type="xs:double" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -505,10 +539,10 @@ SELECT Id_wdays, Id_worker, Date_Start, Date_End FROM working_days WHERE (Id_wda
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Tariff_sc__Id_po__32E0915F" msdata:parent="Positions" msdata:child="Tariff_schedule" msdata:parentkey="Id_position" msdata:childkey="Id_position" msprop:Generator_UserParentTable="Positions" msprop:Generator_UserChildTable="Tariff_schedule" msprop:Generator_RelationVarName="relationFK__Tariff_sc__Id_po__32E0915F" msprop:Generator_ChildPropName="GetTariff_scheduleRows" msprop:Generator_ParentPropName="PositionsRow" msprop:Generator_UserRelationName="FK__Tariff_sc__Id_po__32E0915F" />
-      <msdata:Relationship name="FK__Workers__Id_depa__29572725" msdata:parent="Departments" msdata:child="Workers" msdata:parentkey="Id_department" msdata:childkey="Id_department" msprop:Generator_UserParentTable="Departments" msprop:Generator_UserChildTable="Workers" msprop:Generator_RelationVarName="relationFK__Workers__Id_depa__29572725" msprop:Generator_ChildPropName="GetWorkersRows" msprop:Generator_ParentPropName="DepartmentsRow" msprop:Generator_UserRelationName="FK__Workers__Id_depa__29572725" />
-      <msdata:Relationship name="FK__Workers__Id_posi__286302EC" msdata:parent="Positions" msdata:child="Workers" msdata:parentkey="Id_position" msdata:childkey="Id_position" msprop:Generator_UserParentTable="Positions" msprop:Generator_UserChildTable="Workers" msprop:Generator_RelationVarName="relationFK__Workers__Id_posi__286302EC" msprop:Generator_ChildPropName="GetWorkersRows" msprop:Generator_ParentPropName="PositionsRow" msprop:Generator_UserRelationName="FK__Workers__Id_posi__286302EC" />
-      <msdata:Relationship name="FK__working_d__Id_wo__300424B4" msdata:parent="Workers" msdata:child="working_days" msdata:parentkey="Id_worker" msdata:childkey="Id_worker" msprop:Generator_UserParentTable="Workers" msprop:Generator_UserChildTable="working_days" msprop:Generator_RelationVarName="relationFK__working_d__Id_wo__300424B4" msprop:Generator_ChildPropName="Getworking_daysRows" msprop:Generator_ParentPropName="WorkersRow" msprop:Generator_UserRelationName="FK__working_d__Id_wo__300424B4" />
+      <msdata:Relationship name="FK__Tariff_sc__Id_po__32E0915F" msdata:parent="Positions" msdata:child="Tariff_schedule" msdata:parentkey="Id_position" msdata:childkey="Id_position" msprop:Generator_UserParentTable="Positions" msprop:Generator_UserChildTable="Tariff_schedule" msprop:Generator_RelationVarName="relationFK__Tariff_sc__Id_po__32E0915F" msprop:Generator_ChildPropName="GetTariff_scheduleRows" msprop:Generator_UserRelationName="FK__Tariff_sc__Id_po__32E0915F" msprop:Generator_ParentPropName="PositionsRow" />
+      <msdata:Relationship name="FK__Workers__Id_depa__29572725" msdata:parent="Departments" msdata:child="Workers" msdata:parentkey="Id_department" msdata:childkey="Id_department" msprop:Generator_UserParentTable="Departments" msprop:Generator_UserChildTable="Workers" msprop:Generator_RelationVarName="relationFK__Workers__Id_depa__29572725" msprop:Generator_ChildPropName="GetWorkersRows" msprop:Generator_UserRelationName="FK__Workers__Id_depa__29572725" msprop:Generator_ParentPropName="DepartmentsRow" />
+      <msdata:Relationship name="FK__Workers__Id_posi__286302EC" msdata:parent="Positions" msdata:child="Workers" msdata:parentkey="Id_position" msdata:childkey="Id_position" msprop:Generator_UserParentTable="Positions" msprop:Generator_UserChildTable="Workers" msprop:Generator_RelationVarName="relationFK__Workers__Id_posi__286302EC" msprop:Generator_ChildPropName="GetWorkersRows" msprop:Generator_UserRelationName="FK__Workers__Id_posi__286302EC" msprop:Generator_ParentPropName="PositionsRow" />
+      <msdata:Relationship name="FK__working_d__Id_wo__300424B4" msdata:parent="Workers" msdata:child="working_days" msdata:parentkey="Id_worker" msdata:childkey="Id_worker" msprop:Generator_UserParentTable="Workers" msprop:Generator_UserChildTable="working_days" msprop:Generator_RelationVarName="relationFK__working_d__Id_wo__300424B4" msprop:Generator_ChildPropName="Getworking_daysRows" msprop:Generator_UserRelationName="FK__working_d__Id_wo__300424B4" msprop:Generator_ParentPropName="WorkersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

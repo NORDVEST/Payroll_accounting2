@@ -27,8 +27,8 @@ namespace Payroll_accounting2
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ReportSalaryDepartment reportSalaryDepartment = new ReportSalaryDepartment();
-            reportSalaryDepartment.Show(this);
+            ReportSalaryDepartament reportSalaryDepartament = new ReportSalaryDepartament();
+            reportSalaryDepartament.Show(this);
         }
     }
 }
